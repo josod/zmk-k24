@@ -1,0 +1,13 @@
+file_format: "1"
+id: kyria_k24
+name: Kyria Rev3 k24
+type: shield
+url: https://splitkb.com/products/kyria-pcb-kit
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+    - keys
+    - studio
+siblings:
+    - kyria_k24_left
+    - kyria_k24_right
