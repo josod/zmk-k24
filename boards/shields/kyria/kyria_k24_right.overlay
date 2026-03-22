@@ -92,7 +92,7 @@
 
 
 / {
-  trackball_listner {
+  trackball_listener {
     compatible = "zmk,input-listener";
     device = <&trackball>;
   };
