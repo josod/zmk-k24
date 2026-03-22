@@ -62,6 +62,9 @@
     };
 };
 
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+
+
 &spi0 {
     status = "okay";
     compatible = "nordic,nrf-spim";
@@ -80,6 +83,9 @@
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
+
+       force-awake;
+       force-awake-4ms-mode;
     };
 };
 
