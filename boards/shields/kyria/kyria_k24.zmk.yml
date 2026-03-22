@@ -4,6 +4,7 @@ name: Kyria Rev3 k24
 type: shield
 url: https://splitkb.com/products/kyria-pcb-kit
 requires: [pro_micro]
+
 features:
     - keys
     - pointer
