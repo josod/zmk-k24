@@ -8,13 +8,18 @@ manifest:
         # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
         - name: badjeff
           url-base: https://github.com/badjeff
+        - name: josod
+          url-base: https://github.com/josod
     projects:
         - name: zmk
           remote: zmkfirmware
           revision: v0.3.0
           import: app/west.yml
-        - name: zmk-pmw3610-driver
-          remote: badjeff
-          revision: zmk-0.4
+        - name:
+              zmk-pmw3610-driver
+              # remote: badjeff
+              # revision: zmk-0.4
+          remote: josod
+          revision: main
     self:
         path: config
