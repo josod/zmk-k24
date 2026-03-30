@@ -84,7 +84,6 @@
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
-        input-processors = <&rotate0>;
 
         rotate0: rotate0 {
             compatible = "zmk,input-processor-rotate-plane";
