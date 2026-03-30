@@ -104,6 +104,7 @@
             codes = <INPUT_REL_X INPUT_REL_Y>;
             angle = <-45>;
             sync-window = <2>;
+            output = <&rotate_out>
         };
     };
 };
