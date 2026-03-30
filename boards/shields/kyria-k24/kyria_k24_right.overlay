@@ -103,5 +103,5 @@
 };
 
 &m_split_input {
-    device = <&zip_rotate_pointer>;
+    device = <&pmw3610>; // <&zip_rotate_pointer>;
 };
