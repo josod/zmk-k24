@@ -99,7 +99,7 @@
         compatible = "zmk,input-listener";
         device = <&zip_rotate_pointer>;
     };
-}
+};
 
 &m_split_input {
     device = <&trackball>;
