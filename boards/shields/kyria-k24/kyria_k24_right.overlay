@@ -99,3 +99,7 @@
        force-awake-4ms-mode;
     };
 };
+
+&m_split_input {
+    device = <&pmw3610>; /* only on the right side! */
+};
