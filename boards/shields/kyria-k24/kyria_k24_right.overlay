@@ -87,7 +87,7 @@
 
         rotate0: rotate0 {
             compatible = "zmk,input-processor-rotate-plane";
-            device-name = "PMW3610";
+            device-name = "pmw3610";
             #input-processor-cells = <0>;
             type = <INPUT_EV_REL>;
             codes = <INPUT_REL_X INPUT_REL_Y>;
