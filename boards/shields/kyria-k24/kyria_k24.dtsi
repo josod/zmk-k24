@@ -5,6 +5,7 @@
  */
 
 #include "kyria_k24_common.dtsi"
+#include <input/processors/rotate_plane.dtsi>
 
 &splitkb_kyria_6col_layout {
     transform = <&default_transform>;
@@ -44,7 +45,6 @@
         };
     };
 
-#include <input/processors/rotate_plane.dtsi>
 
     &zip_rotate_pointer {
         angle = <45>;
