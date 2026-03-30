@@ -84,6 +84,7 @@
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
+        input-processors = <&rotate0>;
 
        force-awake;
        force-awake-4ms-mode;
@@ -91,24 +92,16 @@
 };
 
 / {
-    rotate_out: rotate_out {
-        compatible = "zmk,input-processor-output";
-    };
 
     input-processors {
         rotate0: rotate0 {
             compatible = "zmk,input-processor-rotate-plane";
-            device-name = "pmw3610";
+            device-name = "PMW3610";
             #input-processor-cells = <0>;
             type = <INPUT_EV_REL>;
             codes = <INPUT_REL_X INPUT_REL_Y>;
             angle = <45>;
             sync-window = <2>;
-            output = <&rotate_out>;
         };
     };
-};
-
-&m_split_input {
-    device = <&rotate_out>;
 };
