@@ -14,6 +14,9 @@ manifest:
         - name: efogdev
           url-base: https://github.com/efogdev
 
+        - name: nuovotaka
+          url-base: https://github.com/nuovotaka
+
     projects:
         - name: zmk
           remote: zmkfirmware
@@ -29,6 +32,10 @@ manifest:
         - name: zmk-input-processor-rotate-plane
           remote: efogdev
           revision: "84e508a"
+
+        - name: zmk-pointing-acceleration-alpha
+          remote: nuovotaka
+          revision: main
 
     self:
         path: config
