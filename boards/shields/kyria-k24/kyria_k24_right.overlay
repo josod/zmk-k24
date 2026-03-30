@@ -86,14 +86,6 @@
         y-input-code = <INPUT_REL_Y>;
         input-processors = <&rotate0>;
 
-       force-awake;
-       force-awake-4ms-mode;
-    };
-};
-
-/ {
-
-    input-processors {
         rotate0: rotate0 {
             compatible = "zmk,input-processor-rotate-plane";
             device-name = "PMW3610";
@@ -103,5 +95,8 @@
             angle = <45>;
             sync-window = <2>;
         };
+
+       force-awake;
+       force-awake-4ms-mode;
     };
 };
