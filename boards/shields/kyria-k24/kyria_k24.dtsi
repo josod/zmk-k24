@@ -31,3 +31,22 @@
         >;
     };
 };
+
+
+/ {
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        m_split: m_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
+
+    m_listener: m_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        device = <&m_split>;
+    };
+};

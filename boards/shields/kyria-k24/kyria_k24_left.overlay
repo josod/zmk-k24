@@ -23,3 +23,8 @@
     , <&pro_micro 8 GPIO_ACTIVE_HIGH>
     ;
 };
+
+
+&m_listener {
+    status = "okay";
+};
