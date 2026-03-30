@@ -74,7 +74,7 @@
     pinctrl-names = "default", "sleep";
     cs-gpios = <&pro_micro 20 GPIO_ACTIVE_LOW>;
 
-    trackball: trackball@0 {
+    pmw3610: pmw3610@0 {
         status = "okay";
         compatible = "pixart,pmw3610-alt";
         reg = <0>;
@@ -90,18 +90,24 @@
     };
 };
 
-&zip_rotate_pointer {
-    angle = <45>;
-};
-
 / {
-    rotated_pointer_plane {
-        compatible = "zmk,input-listener";
-        device = <&zip_rotate_pointer>;
+    rotate_out: rotate_out {
+        compatible = "zmk,input-processor-output";
+    };
+
+    input-processors {
+        rotate0 : rotate0 {
+            compatible = "zmk,input-processor-rotate-plane";
+            device-name = "pmw3610";
+            #input-processor-cells = <0>;
+            type = <INPUT_EV_REL>;
+            codes = <INPUT_REL_X INPUT_REL_Y>;
+            angle = <-45>;
+            sync-window = <2>;
+        };
     };
 };
 
 &m_split_input {
-    device = <&trackball>;
-//    input-processors = <&zip_rotate_pointer>;
+    device = <&rotate_out>;
 };
