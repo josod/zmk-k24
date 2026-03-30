@@ -102,13 +102,6 @@
     };
 };
 
-/ {
-    rotated_pointer_plane {
-        compatible = "zmk,input-listener";
-        device = <&zip_rotate_pointer>;
-    };
-};
-
 &m_split_input {
-    device = <&rotated_pointer_plane>;
+    device = <&zip_rotate_pointer>;
 };
