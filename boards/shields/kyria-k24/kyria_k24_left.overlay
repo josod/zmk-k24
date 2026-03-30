@@ -5,6 +5,7 @@
  */
 
 #include "kyria_k24.dtsi"
+#include <input/processors/rotate_plane.dtsi>
 
 &kscan0 {
     row-gpios
@@ -39,8 +40,20 @@
 };
 */
 
+&zip_rotate_pointer {
+    angle = <45>;
+};
+
 &m_split_listener {
     status = "okay";
+    input-processors = <&zip_rotate_pointer>;
     //input-processors = <&pointer_accel>;
 
 };
+
+/ {
+    rotated_pointer_plane {
+        compatible = "zmk,input-listener";
+        device = <&zip_rotate_pointer>;
+    };
+}

@@ -5,7 +5,7 @@
  */
 
 #include "kyria_k24.dtsi"
-#include <input/processors/rotate_plane.dtsi>
+
 
 
 #define INPUT_EV_KEY 0x01               /**< Key event */
@@ -90,18 +90,7 @@
     };
 };
 
-&zip_rotate_pointer {
-    angle = <45>;
-};
-
-/ {
-    pmw3610_listener: pmw3610_listener {
-        compatible = "zmk,input-listener";
-        device = <&pmw3610>;
-        input-processors = <&zip_rotate_pointer>;
-    };
-};
 
 &m_split_input {
-    device = <&pmw3610>; // <&zip_rotate_pointer>;
+    device = <&pmw3610>;
 };
