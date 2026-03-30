@@ -56,4 +56,4 @@
         compatible = "zmk,input-listener";
         device = <&zip_rotate_pointer>;
     };
-}
+};
