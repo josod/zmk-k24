@@ -5,6 +5,7 @@
  */
 
 #include "kyria_k24.dtsi"
+#include <input/processors/rotate_plane.dtsi>
 
 
 #define INPUT_EV_KEY 0x01               /**< Key event */
@@ -89,22 +90,18 @@
     };
 };
 
-/ {
-    trackball_listener: trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-        input-processors = <&zip_rotate_pointer>;
-    };
+&zip_rotate_pointer {
+    angle = <45>;
 };
 
+/ {
+    rotated_pointer_plane {
+        compatible = "zmk,input-listener";
+        device = <&zip_rotate_pointer>;
+    };
+}
 
-
-
-// Overrides for the input-split child node
-&m_split {
+&m_split_input {
     device = <&trackball>;
-
-
-    // Optional
-//    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+    input-processors = <&zip_rotate_pointer>;
 };

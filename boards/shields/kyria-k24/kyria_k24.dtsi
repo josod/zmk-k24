@@ -5,7 +5,6 @@
  */
 
 #include "kyria_k24_common.dtsi"
-#include <input/processors/rotate_plane.dtsi>
 
 &splitkb_kyria_6col_layout {
     transform = <&default_transform>;
@@ -39,22 +38,19 @@
         #address-cells = <1>;
         #size-cells = <0>;
 
-        m_split: m_split@0 {
+        m_split_input: m_split_input@0 {
             compatible = "zmk,input-split";
             reg = <0>;
         };
     };
 
 
-    &zip_rotate_pointer {
-        angle = <45>;
-    };
 
-    m_listener: m_listener {
+    m_split_listener: m_split_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
-        device = <&m_split>;
-        input-processors = <&zip_rotate_pointer>;
+        device = <&m_split_input>;
+     //   input-processors = <&zip_rotate_pointer>;
 
     };
 };

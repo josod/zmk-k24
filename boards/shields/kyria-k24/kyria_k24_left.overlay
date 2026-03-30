@@ -25,6 +25,6 @@
 };
 
 
-&m_listener {
+&m_split_listener {
     status = "okay";
 };
