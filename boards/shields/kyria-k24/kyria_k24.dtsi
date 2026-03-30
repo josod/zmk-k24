@@ -44,9 +44,17 @@
         };
     };
 
+#include <input/processors/rotate_plane.dtsi>
+
+    &zip_rotate_pointer {
+        angle = <45>;
+    };
+
     m_listener: m_listener {
         compatible = "zmk,input-listener";
         status = "disabled";
         device = <&m_split>;
+        input-processors = <&zip_rotate_pointer>;
+
     };
 };
