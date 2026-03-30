@@ -85,21 +85,23 @@
         x-input-code = <INPUT_REL_X>;
         y-input-code = <INPUT_REL_Y>;
 
-        rotate0: rotate0 {
-            compatible = "zmk,input-processor-rotate-plane";
-            device-name = "pmw3610";
-            #input-processor-cells = <0>;
-            type = <INPUT_EV_REL>;
-            codes = <INPUT_REL_X INPUT_REL_Y>;
-            angle = <45>;
-            sync-window = <2>;
-        };
-
        force-awake;
        force-awake-4ms-mode;
     };
 };
 
+&zip_rotate_pointer {
+    angle = <45>;
+};
+
 &m_split_input {
     device = <&pmw3610>; /* only on the right side! */
+    input-processors = <&zip_rotate_pointer>;
 };
+
+/ {
+    rotated_pointer_plane {
+        compatible = "zmk,input-listener";
+        device = <&zip_rotate_pointer>;
+    };
+}
