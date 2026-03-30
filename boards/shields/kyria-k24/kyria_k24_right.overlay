@@ -94,14 +94,14 @@
     angle = <45>;
 };
 
-&m_split_input {
-    device = <&pmw3610>; /* only on the right side! */
-    input-processors = <&zip_rotate_pointer>;
+/ {
+    pmw3610_listener: pmw3610_listener {
+        compatible = "zmk,input-listener";
+        device = <&pmw3610>;
+        input-processors = <&zip_rotate_pointer>;
+    };
 };
 
-/ {
-    rotated_pointer_plane {
-        compatible = "zmk,input-listener";
-        device = <&zip_rotate_pointer>;
-    };
-}
+&m_split_input {
+    device = <&zip_rotate_pointer>;
+};
