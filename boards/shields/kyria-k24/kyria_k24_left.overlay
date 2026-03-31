@@ -38,6 +38,8 @@
     min-factor = <1000>;          // 1.0x minimum (no deceleration)
 	sensor-dpi = <600>;
 };
+
+
 */
 
 &zip_rotate_pointer {
